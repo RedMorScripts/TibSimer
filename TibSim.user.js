@@ -114,9 +114,9 @@
               
               this.buttonTools = new qx.ui.form.Button("RedMor Tool");
               this.buttonTools.set({
-                width: 80,
+                width: 110,
                 appearance: "button-text-small",
-                toolTipText: "Open RedMor Tools"
+                toolTipText: "Open RedMor Tool"
               });
               this.buttonTools.addListener("click", this.toggleTools, this);
               
@@ -188,7 +188,7 @@
               this.battleResultsBox.setLayout(new qx.ui.layout.VBox(1));
               this.battleResultsBox.setShowMaximize(false);
               this.battleResultsBox.setShowMinimize(false);
-              this.battleResultsBox.moveTo(125, 125);
+              this.battleResultsBox.moveTo(1565, 300);
               this.battleResultsBox.setHeight(300);
               this.battleResultsBox.setWidth(200);
               
@@ -197,7 +197,7 @@
               this.battleResultsBox.add(tabView);
 
               ////////////////// Stats ////////////////////
-              this.statsPage = new qx.ui.tabview.Page("Stats");
+              this.statsPage = new qx.ui.tabview.Page("Data");
               this.statsPage.setLayout(new qx.ui.layout.VBox(5));
               this.statsPage.setPadding(1);
               tabView.add(this.statsPage);
@@ -384,7 +384,7 @@
               layoutPage.add(layVBox);
 
               ////////////////// Info ////////////////////
-              var infoPage = new qx.ui.tabview.Page("Info");
+              var infoPage = new qx.ui.tabview.Page("Loot");
               infoPage.setLayout(new qx.ui.layout.VBox(5));
               tabView.add(infoPage);
 
@@ -395,11 +395,21 @@
               pVBox.setThemedPadding(2);
               pVBox.setThemedBackgroundColor("#eef");
               infoPage.add(pVBox);
-              var proHelpBar = new qx.ui.basic.Label().set({
-                value: "<a target='_blank' href='http://userscripts.org/scripts/discuss/130344'>Forums</a>",
-                rich: true
+              var linkbar = new qx.ui.basic.Label().set({
+              value: "<a target='_blank' href='http://allianceswiki.com/Tiberium'>C&C Wiki</a>",
+              rich: true
               });
-              pVBox.add(proHelpBar);
+              var  linkbar2= new qx.ui.basic.Label().set({
+              value: "<a target='_blank' href='http://map.tiberium-alliances.com/map/46#500:500|0.5||'>Map World 5</a>",
+              rich: true
+              });
+              var  linkbar3= new qx.ui.basic.Label().set({
+              value: "<a target='_blank' href='http://forum.alliances.commandandconquer.com/'>C&C Forum</a>",
+              rich: true
+              });
+              pVBox.add(linkbar);
+              pVBox.add(linkbar2);
+              pVBox.add(linkbar3);
               // The Spoils
               var psVBox = new qx.ui.container.Composite()
               psVBox.setLayout(new qx.ui.layout.VBox(5));
